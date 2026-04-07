@@ -7,15 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -30,7 +23,6 @@
             padding: 0 20px;
         }
 
-        /* Navigation */
         .navbar {
             height: 80px;
             display: flex;
@@ -49,137 +41,70 @@
             width: 100%;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            color: #fff;
-            font-weight: 700;
-            text-decoration: none;
-        }
+        .logo { font-size: 1.5rem; letter-spacing: 2px; color: #fff; font-weight: 700; text-decoration: none; }
+        .logo span { color: #3b82f6; font-weight: 300; }
 
-        .logo span {
-            color: #3b82f6;
-            font-weight: 300;
-        }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li a { text-decoration: none; color: #9ca3af; margin-left: 30px; font-size: 0.9rem; transition: 0.3s; }
+        .btn-nav { background: #3b82f6; color: white !important; padding: 8px 18px; border-radius: 4px; }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: #9ca3af;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .nav-links li a:hover {
-            color: #3b82f6;
-        }
-
-        .btn-nav {
-            background: #3b82f6;
-            color: white !important;
-            padding: 8px 18px;
-            border-radius: 4px;
-        }
-
-        /* Hero */
         .hero {
-            padding: 140px 0;
+            padding: 160px 0;
             text-align: center;
             background: radial-gradient(circle at center, #111827 0%, #0a0b10 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero h2 {
             font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Space below title */
             color: #fff;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px; /* 40px space below paragraph to push button down */
+            color: #9ca3af;
+        }
+
+        .btn-hero {
+            display: inline-block; /* Makes it act like a block for spacing */
+            text-decoration: none;
+            background: #3b82f6;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s transform ease;
+        }
+
+        .btn-hero:hover {
+            transform: scale(1.05);
+            background: #2563eb;
         }
 
         /* Sections */
-        section {
-            padding: 100px 0;
-        }
+        section { padding: 100px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h3 { font-size: 2.5rem; color: #fff; }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        /* Features */
+        #solutions { background: #0f172a; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: #1e293b; padding: 40px; border-radius: 12px; border: 1px solid #334155; }
 
-        .section-title h3 {
-            font-size: 2.5rem;
-            color: #fff;
-        }
+        /* Get Started */
+        #get-started { background: #0a0b10; text-align: center; }
+        .contact-box { max-width: 500px; margin: 0 auto; background: #1e293b; padding: 40px; border-radius: 15px; border: 1px solid #3b82f6; }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 5px; }
+        .btn-block { width: 100%; background: #3b82f6; color: white; border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 5px; }
 
-        #solutions {
-            background: #0f172a;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: #1e293b;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: #3b82f6;
-            transform: translateY(-5px);
-        }
-
-        #get-started {
-            background: #0a0b10;
-            text-align: center;
-        }
-
-        .contact-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #1e293b;
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid #3b82f6;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #0f172a;
-            border: 1px solid #334155;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .btn-block {
-            width: 100%;
-            background: #3b82f6;
-            color: white;
-            border: none;
-            padding: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid #1f2937;
-            font-size: 0.8rem;
-            color: #4b5563;
-        }
+        footer { padding: 40px 0; text-align: center; border-top: 1px solid #1f2937; font-size: 0.8rem; color: #4b5563; }
     </style>
 </head>
 <body>
@@ -197,8 +122,8 @@
     <header class="hero">
         <div class="container">
             <h2>Secure. Shielded. Sovereign.</h2>
-            <p>The ultimate defense for your digital assets.</p>
-            <a href="#get-started" style="text-decoration:none; background:#3b82f6; color:white; padding:15px 30px; border-radius:5px; font-weight:bold;">Start Protection</a>
+            <p>The ultimate defense for your digital assets. We provide institutional-grade encryption for the everyday investor.</p>
+            <a href="#get-started" class="btn-hero">Start Protection Now</a>
         </div>
     </header>
 
@@ -228,7 +153,7 @@
         <div class="container">
             <div class="section-title">
                 <h3>Ready to join Crypto Shield?</h3>
-                <p>Enter your email to receive our security protocol guide.</p>
+                <p>Join over 50,000 users securing their future.</p>
             </div>
             <div class="contact-box">
                 <form action="#">
